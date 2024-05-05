@@ -26,3 +26,11 @@ this will allow the server to restart automicatically when a change has been mad
 
 GraphQL & Apollo servers -
 npm install @apollo/server graphql
+
+
+
+1. create schema
+2. creat a rseolbver
+3. Main file - will have to do both ends. (client file - calls the backend) apollo-client.js add as a dependency
+
+4.
