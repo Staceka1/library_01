@@ -1,25 +1,23 @@
 import { useState } from 'react'; // (importing the useState library from react)
 import Sidebar from './Components/sidebar'; // (importing the Sidebar component from the sidebar file)
-import './App.css' // (Importing the files from the CSS file)
-
+import './App.css'; // (Importing the files from the CSS file)
+import SigninForm from './Components/SigninForm';
 
 // Counter Function
 function Counter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+      <SigninForm />
+      <div className='card'>
+        <button onClick={() => setCount(count => count + 1)}>
           count is {count}
         </button>
       </div>
-
     </>
-  )
+  );
 }
-
 
 // This is the Nav function that will be used to render the Sidebar component
 const Nav = () => {
@@ -31,4 +29,4 @@ const Nav = () => {
 };
 
 // Exporting the Nav and Counter functions for use in other files
-export { Nav, Counter};
+export { Nav, Counter };

@@ -36,9 +36,17 @@ export async function updateBookController(req, res) {
 }
 
 export async function createBookController(req, res) {
-    const book = req.body;
-    const newBook = await createBookService(book);
-    res.send(newBook);
+    try {
+        const book = req.body;
+        console.log(book, '****')
+        const newBook = await createBookService(book);
+        res.send(newBook);
+    }
+
+    catch (error) {
+        console.log(error);
+        res.send(error);
+    };
 }
 
 export async function deleteBookController(req, res) {

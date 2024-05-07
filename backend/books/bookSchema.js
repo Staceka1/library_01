@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 export const bookSchema = new mongoose.Schema(
     {
-         authors: [
+  authors: [
     {
       type: String,
     },
@@ -13,16 +13,12 @@ export const bookSchema = new mongoose.Schema(
     type: String,
     required: true,
         },
-  
   // saved book id from GoogleBooks
   bookId: {
     type: String,
     required: true,
   },
   image: {
-    type: String,
-  },
-  link: {
     type: String,
   },
   title: {

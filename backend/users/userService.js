@@ -10,7 +10,7 @@
 
 import {
     getUsers, getUserById,
-    updateUser, createUser, deleteUser,
+    updateUser, createUser, deleteUser, searchUsers
 } from './userDal.js';
 
 export async function getUsersService() {
@@ -31,4 +31,8 @@ export async function createUserService(user) {
 
 export async function deleteUserService(id) {
     return await deleteUser(id);
+}
+
+export async function searchUsersService(name, id) {
+    return await searchUsers(name, id);
 }

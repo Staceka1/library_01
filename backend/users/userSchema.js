@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 export const userSchema = new mongoose.Schema(
     {
-        username: {
+        name: {
             type: String,
             required: true,
             unique: true,
@@ -20,7 +20,7 @@ export const userSchema = new mongoose.Schema(
             required: true,
         },
     // set savedBooks to be an array of data that adheres to the bookSchema
-    savedBooks: [bookSchema],
+    // savedBooks: [bookSchema],
 
     },
     { timestamps: true }

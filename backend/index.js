@@ -1,8 +1,9 @@
-import Express from 'express'; // importing the express library
+import express from 'express'; // importing the express library
 import { bookRouter } from './books/bookRouter.js'; // importing the bookRouter from the bookRouter.js file
 import dotenv from 'dotenv'; // importing the dotenv librar
 
 import mongoose from 'mongoose';
+import { userRouter } from './users/userRouter.js';
 
 dotenv.config(); // This loads the environment variables from the .env file
 
@@ -19,8 +20,9 @@ mongoose
 
 
 
-const app = Express(); // creating an instance of the express library
+const app = express(); // creating an instance of the express library
 const port = 3000; // setting the port to 3000
+app.use(express.json()); // Middleware to parse JSON bodies
 
 
 //ENDPOINTS
@@ -34,6 +36,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/books', bookRouter); // using the bookRouter when the /books route is accessed
+app.use ('/users', userRouter); // using the userModel when the /users route is accessed
 
 //PORT & EXPRESS
 // This is using Express and the PORT to run the application

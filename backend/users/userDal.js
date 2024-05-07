@@ -29,6 +29,16 @@ export async function deleteUser(id) {
 
 // ***** Additional operations *****
 
-export async function searchUsers(title) {
-    return await userModel.find({ title: { $regex: title, $options: 'i' } }); // i is for case-insensitive
+export async function searchUsers(name, id) {
+    console.log('searchUsers in DAL', name, id)
+    return await userModel.find({ $or: [
+            { name: { $regex: name, $options: 'i' } }, // Case-insensitive partial match for name
+            { _id: id } // Exact match for the ID
+        ] }); // i is for case-insensitive
 }
+
+// !!!! This is a bad idea because it exposes the password hash
+// ? Should we hash the password here?
+// ***** Additional operations *****
+// todo: add a function to get a user by email
+// normal comments

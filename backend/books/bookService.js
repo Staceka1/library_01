@@ -26,6 +26,7 @@ export async function updateBookService(id, book) {
 }
 
 export async function createBookService(book) {
+    console.log(book, '****')
     return await createBook(book);
 }
 
