@@ -5,3 +5,153 @@
   text-align: center;
 }
 
+/* ------- Sign In Form Styling ---------*/
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  border-radius: 20px;
+  width: 100%;
+
+}
+/* -------Header Styling ---------*/
+.signin h1 {
+  color: #000;
+text-align: center;
+font-family: Mazzard;
+font-size: 2.5rem;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 2.5rem */
+letter-spacing: -0.05rem;
+width: 28.88969rem;
+}
+
+.signinlingo {
+  color: #BABABA;
+  text-align: center;
+  font-family: Mazzard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 135%; /* 1.35rem */
+  letter-spacing: -0.04rem;
+  width: 26.4375rem;
+}
+
+/* -------Login Button Styling ---------*/
+.login {
+ border-radius: 3.5rem;
+ background: #000;
+ color: #fff;
+ padding: 10px;
+ width: 20.87244rem;
+ height: 4.17519rem;
+ flex-shrink: 0;
+  margin-top: 15px;
+  font-family: Mazzard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 1rem */
+  letter-spacing: -0.01rem;
+}
+
+/* -------Signup Button Styling ---------*/
+.signup {
+ border-radius: 3.5rem;
+ background-color: #FFF;
+ border: 1px solid #BFBFBF;
+ color: #8B8B8B;
+ padding: 10px;
+ width: 20.87244rem;
+ height: 4.17519rem;
+ flex-shrink: 0;
+ margin-top: 15px;
+ font-family: Mazzard;
+ font-size: 1rem;
+ font-style: normal;
+ font-weight: 600;
+ line-height: 100%; /* 1rem */
+ letter-spacing: -0.01rem;
+}
+
+/* -------Forgot password styling ---------*/
+
+.forgotPassword {
+  background-color: transparent;
+  color: #3693FF;
+  font-family: Mazzard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 100%; /* 1rem */
+  letter-spacing: -0.01rem;
+  padding: 15px;
+  border: none;
+  position: relative;
+  display: inline-block;
+  margin: 0 80px;
+}
+
+.forgotPassword::before,
+.forgotPassword::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 50px;
+  background-color: #ccc;
+}
+
+.forgotPassword::before {
+  left: -60px;
+}
+
+.forgotPassword::after {
+  right: -60px;
+}
+
+/* ------- Password Input Box Styling ---------*/
+.password {
+  width: 20.87244rem;
+  height: 4.17519rem;
+  flex-shrink: 0;
+  border-radius: 3.5rem;
+  border: 1px solid #E7E7E7;
+  background: #F5F5F5 url('/lock.svg') no-repeat 15px center;
+  padding-left: 40px;
+  padding-right: 20px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  font-family: Mazzard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 1rem */
+  letter-spacing: -0.01rem;
+}
+
+/* ------- Email Input Box Styling ---------*/
+.emailaddress {
+  width: 20.87244rem;
+  height: 4.17519rem;
+  flex-shrink: 0;
+  border-radius: 3.5rem;
+  border: 1px solid #E7E7E7;
+  background: #F5F5F5 url('/email.svg') no-repeat 15px center;
+  padding-left: 40px;
+  padding-right: 20px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  font-family: Mazzard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 1rem */
+  letter-spacing: -0.01rem;
+}
+

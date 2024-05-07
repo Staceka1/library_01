@@ -14,7 +14,7 @@ const Sidebar = () => {
           boxSizing: 'border-box',
         }}}>
           <Box sx={{ p: 4, display: 'flex', justifyContent: 'center'}}>
-              <img src={youXlogo} alt="Your Logo" style={{ width: '110px', height: 'auto'}} />
+              <img src={youXlogo} alt="youXlogo" style={{ width: '110px', height: 'auto'}} />
           </Box>
           <Divider />
       <List>
