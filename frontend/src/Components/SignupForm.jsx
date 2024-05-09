@@ -9,12 +9,19 @@ function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Get the navigate function
+  const [error, setError] = useState(null); // [1
 
   async function handleSignup(e) {
     e.preventDefault();
     console.log('handleSignup()');
     console.log(fullName, email, password);
-    await createUser(fullName, email, password);
+    const userResponse = await createUser(fullName, email, password);
+    console.log('userResponse', userResponse);
+    if (!userResponse) {
+      setError('User creation failed');
+      return;
+    }
+    navigate('/'); // Adjust the route as necessary
   }
 
   function handleLogin(e) {
@@ -61,18 +68,21 @@ function SignupForm() {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
-      <button
-        className='login'
-        onClick={handleLogin}
-      >
-        Login
-      </button>
+
       <button
         className='signup'
         onClick={handleSignup}
       >
         Sign Up
       </button>
+      <p>Already have an account?</p>
+      <button
+        className='login'
+        onClick={handleLogin}
+      >
+        Login
+      </button>
+      {error && <p>{error}</p>}
     </form>
   );
 }

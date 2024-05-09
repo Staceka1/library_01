@@ -3,7 +3,7 @@ import {
     getBookByIdService,
     updateBookService,
     createBookService,
-    deleteBookService,
+    deleteBookService,searchBooksService
 } from './bookService.js';
 
 export async function getBooksController(req, res) {
@@ -54,3 +54,15 @@ export async function deleteBookController(req, res) {
     const deletedBook = await deleteBookService(id);
     res.send(deletedBook);
 }
+
+export async function searchBooksController(req, res) {
+    try {
+        const title = req.body;
+        const books = await searchBooksService(title);
+        res.send(books);
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+

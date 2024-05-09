@@ -92,7 +92,7 @@ width: 28.88969rem;
 
 /* -------Forgot password styling ---------*/
 
-.forgotPassword {
+.forgotPassword{
   background-color: transparent;
   color: #3693FF;
   font-family: Mazzard;
@@ -196,4 +196,58 @@ width: 28.88969rem;
 
 .Library {
   color: pink;
+}
+
+.books {
+padding-left: 300px;
+display: flex;
+}
+
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 420px; /* Adjusted height for better card dimension */
+  width: 300px; /* Adjusted width for better card dimension */
+  background-color: #ffffff; /* White background */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out; /* Smooth transform effect on hover */
+}
+
+.bookCard:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.bookCard img {
+  width: 100%; /* Make image take full width of the card */
+  height: 240px; /* Adjusted height for better image display */
+  object-fit: cover; /* Ensure the image covers the entire space */
+  border-radius: 10px;
+}
+
+.bookCard .bookTitle {
+  font-size: 20px; /* Larger text for the title */
+  font-weight: bold;
+  color: #333; /* Dark grey color for text */
+  margin-bottom: 10px; /* Add some spacing below the title */
+}
+
+.bookCard .bookDescription {
+  text-align: center;
+  font-size: 14px;
+  color: #666; /* Medium grey color for the description */
+  margin-top: 10px; /* Add some spacing above the description */
+  overflow: hidden; /* Hide overflow text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit description to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Optional: Add a subtle border around the card */
+.bookCard {
+  border: 1px solid #e0e0e0;
 }

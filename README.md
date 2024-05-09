@@ -5,6 +5,10 @@ youXlibrary
 
 Technologies Used:
 # React + Vite
+# Mongo DB
+# Material UI
+# Nodemon
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

@@ -1,4 +1,3 @@
 export function checkIsLoggedIn() {
-  return false; // todo
-  //   return localStorage.getItem('token') !== null;
+  return localStorage.getItem('token') !== null;
 }

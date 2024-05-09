@@ -1,6 +1,7 @@
 export async function createUser(name, email, password) {
   console.log('createUser()', name, email, password);
-  const url = 'http://localhost:3000/users';
+  const url = `${process.env.BASE_URL}/user`;
+  console.log('url:', url)
   const body = JSON.stringify({ name, email, password }); // Make sure parameters are in the correct order if needed
   const headers = {
     'Content-Type': 'application/json',
@@ -18,17 +19,29 @@ export async function createUser(name, email, password) {
     }
 
     // Correctly handle the JSON response
-    const createdUser = await response.json();
-    console.log('Received data:', createdUser);
+    const data = await response.json();
 
-    const newId = createdUser._id;
-    console.log('New user ID:', newId);
+    // expect {
+    // 	"user": {
+    // 		"name": "n3a4m5e",
+    // 		"password": "pass3wor4d",
+    // 		"email": "ema54il@g.com"
+    // 	},
+    // 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiaWF0IjoxNzE1MjM4OTIwLCJleHAiOjE3MTUyNDYxMjB9.8BAsmPanVrg8jyUvIQ-KIIKWxb0vgM1t4bBMXsOw9GA"
+    // }
 
-    if (newId) {
-      console.log('User created successfully with ID:', newId);
-    } else {
-      console.log('User creation failed, no ID returned');
+    const user = data.user;
+    const token = data.token;
+
+    if (!token) {
+      // something went wrong  {
+      return null;
     }
+
+    // set token to local storage
+    localStorage.setItem('token', token);
+
+    return user;
   } catch (error) {
     console.error('Error creating user:', error);
   }

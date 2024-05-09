@@ -1,30 +1,43 @@
-export async function loginUser(name, password) {
-  const url = 'http://localhost:3001/login';
-  const body = JSON.stringify({ name, password });
+export async function loginUser(name, email, password) {
+  console.log('loginUser()', name, email, password);
+  const url = `${process.env.BASE_URL}/user`;
+  const body = JSON.stringify({ name, email, password }); // Make sure parameters are in the correct order if needed
   const headers = {
     'Content-Type': 'application/json',
   };
 
-  // In the backend route I'm expecting if I talk to this endpoint it will respond with {
-  // success: true/false
-  // user: userobject from database with _id, name, wtv
-  // JWTtoken: secretToken
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: headers,
+      body: body,
+    });
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers,
-    body,
-  });
+    // Correctly handle the JSON response
+    const data = await response.json();
 
-  const data = response.json();
+    // expect {
+    // 	"user": {
+    // 		"name": "n3a4m5e",
+    // 		"password": "pass3wor4d",
+    // 		"email": "ema54il@g.com"
+    // 	},
+    // 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiaWF0IjoxNzE1MjM4OTIwLCJleHAiOjE3MTUyNDYxMjB9.8BAsmPanVrg8jyUvIQ-KIIKWxb0vgM1t4bBMXsOw9GA"
+    // }
 
-  const { success, user, JWTtoken } = data;
+    const user = data.user;
+    const token = data.token;
 
-  if (success) {
-    localStorage.setItem('JWTtoken', JWTtoken);
-    localStorage.setItem('user', JSON.stringify(user));
-    return true;
+    if (!token) {
+      // something went wrong  {
+      return null;
+    }
+
+    // set token to local storage
+    localStorage.setItem('token', token);
+
+    return user;
+  } catch (error) {
+    console.error('Error creating user:', error);
   }
-
-  return false;
 }

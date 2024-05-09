@@ -12,7 +12,12 @@ function SigninForm() {
   async function handleLogin(e) {
     e.preventDefault();
     console.log(email, password);
-    await loginUser(email, password);
+    const userResponse = await loginUser(email, password);
+    console.log('userResponse', userResponse);
+    if (!userResponse) {
+      return;
+    }
+    navigate('/'); // Adjust the route as necessary
   }
 
   function handleSignup(e) {
@@ -65,6 +70,7 @@ function SigninForm() {
       >
         Login
       </button>
+      <p>Don't have an account?</p>
       <button
         className='signup'
         onClick={handleSignup}

@@ -39,6 +39,10 @@ export async function searchUsers(name, id) {
   }); // i is for case-insensitive
 }
 
+export async function loginUser(email, password) {
+  return await userModel.findOne({ email, password });
+}
+
 // !!!! This is a bad idea because it exposes the password hash
 // ? Should we hash the password here?
 // ***** Additional operations *****

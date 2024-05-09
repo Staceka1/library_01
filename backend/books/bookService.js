@@ -10,7 +10,7 @@
 
 import {
     getBooks, getBookById,
-    updateBook, createBook, deleteBook,
+    updateBook, createBook, deleteBook,searchBooks
 } from './bookdal.js';
 
 export async function getBooksService() {
@@ -32,4 +32,8 @@ export async function createBookService(book) {
 
 export async function deleteBookService(id) {
     return await deleteBook(id);
+}
+
+export async function searchBooksService(search) {
+    return await searchBooks(search);
 }
