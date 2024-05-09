@@ -1,6 +1,6 @@
 export async function getAllBooks() {
   // const url = 'http://localhost:3000/books';
-  const url = `${process.env.BASE_URL}/books`;
+  const url = `${import.meta.env.VITE_BASE_URL}/books`;
   const headers = {
     'Content-Type': 'application/json',
   };

@@ -1,6 +1,6 @@
 export async function createUser(name, email, password) {
   console.log('createUser()', name, email, password);
-  const url = `${process.env.BASE_URL}/user`;
+  const url = `${import.meta.env.VITE_BASE_URL}/users`;
   console.log('url:', url)
   const body = JSON.stringify({ name, email, password }); // Make sure parameters are in the correct order if needed
   const headers = {

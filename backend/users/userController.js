@@ -67,9 +67,13 @@ export async function searchUsersController(req, res) {
 
 export async function loginUserController(req, res) {
   try {
+    console.log('loginUserController()');
     const email = req.body.email;
     const password = req.body.password;
+    console.log('email', email);
+    console.log('password', password);
     const user = await loginUserService(email, password);
+    console.log('user', user)
     res.send(user);
   } catch (error) {
     console.log(error);

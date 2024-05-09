@@ -1,7 +1,7 @@
-export async function loginUser(name, email, password) {
-  console.log('loginUser()', name, email, password);
-  const url = `${process.env.BASE_URL}/user`;
-  const body = JSON.stringify({ name, email, password }); // Make sure parameters are in the correct order if needed
+export async function loginUser(email, password) {
+  console.log('loginUser()', email, password);
+  const url = `${import.meta.env.VITE_BASE_URL}/users/login`;
+  const body = JSON.stringify({ email, password }); // Make sure parameters are in the correct order if needed
   const headers = {
     'Content-Type': 'application/json',
   };
