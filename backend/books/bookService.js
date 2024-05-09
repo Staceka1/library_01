@@ -11,7 +11,7 @@
 import {
     getBooks, getBookById,
     updateBook, createBook, deleteBook,searchBooks
-} from './bookdal.js';
+} from './bookDal.js';
 
 export async function getBooksService() {
     return await getBooks();
