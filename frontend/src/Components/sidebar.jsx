@@ -6,31 +6,54 @@ import { Divider, Drawer, List, ListItem, ListItemText, Box } from '@mui/materia
 const Sidebar = () => {
   return (
     <Drawer
-      variant="permanent"
+      variant='permanent'
       sx={{
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: 340,
           boxSizing: 'border-box',
-        }}}>
-          <Box sx={{ p: 4, display: 'flex', justifyContent: 'center'}}>
-              <img src={youXlogo} alt="youXlogo" style={{ width: '110px', height: 'auto'}} />
-          </Box>
-          <Divider />
+        },
+      }}
+    >
+      <Box sx={{ p: 4, display: 'flex', justifyContent: 'center' }}>
+        <img
+          src={youXlogo}
+          alt='youXlogo'
+          style={{ width: '110px', height: 'auto' }}
+        />
+      </Box>
+      <Divider />
       <List>
-        <ListItem button>
-          <ListItemText primary="Library" />
+        <ListItem
+          button
+          sx={{
+            color: '#3ADCBF',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <ListItemText
+            primary='Library'
+            sx={{
+              textAlign: 'center',
+              width: '100%',
+              fontFamily: 'Mazzard',
+              fontSize: '1rem',
+              fontStyle: 'normal',
+              fontWeight: 550,
+              lineHeight: '100%',
+            }}
+          />
         </ListItem>
         <ListItem button>
-          <ListItemText primary="My Account" />
+          <ListItemText primary='My Account' />
         </ListItem>
-          <ListItem button>
-          <ListItemText primary="My " />
+        <ListItem button>
+          <ListItemText primary='Sign Out' />
         </ListItem>
         {/* Add more items as needed */}
       </List>
-
-
     </Drawer>
   );
 };
