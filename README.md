@@ -55,7 +55,7 @@ The application is covered under the following license: MIT
 Stacey Rogers
 
 ## GitHub Repository
-View GitHub Repository [here]
+View GitHub Repository [here](https://github.com/Staceka1/library_01)
 
 ## Deployed Application
 View deployed application [here](https://library-01-2.onrender.com/)
