@@ -1,75 +1,62 @@
-# library_01
+# youXlibrary
 
-youXlibrary
+## Table of Contents
 
+- [Technologies Used](#technologies-used)
+- [Description](#description)
+- [Design](#design-mockups)
+- [User Story](#user-story)
+- [Future Development](#future-development)
+- [License](#license)
+- [Authors](#authors)
+- [GitHub Repository](#github-repository)
+- [Deployed Application](#deployed-application)
 
-Technologies Used:
-# React + Vite
-# Mongo DB
-# Material UI
-# Nodemon
-
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-
-
-When typing into back-end JSON file and adding "dev"
-The type: modules is used which will allow to use the syntax import instead of require.
-
-
-npm install nodemon -
-this will allow the server to restart automicatically when a change has been made.
+## Technologies Used:
+* React + Vite
+* Mongo DB
+* Material UI
+* Nodemon
+* Javascript
+* Node.js
+* Mongoose
+* Nodemon
 
 
-GraphQL & Apollo servers -
-npm install @apollo/server graphql
+## Description
+Welcome to the Office Library, your virtual gateway to our workplace's rich repository of knowledge and entertainment. This intuitive web application is designed to foster a culture of learning and sharing within our office community. Here, employees can effortlessly browse, reserve, and borrow from an extensive collection of books tailored to professional development and personal interests.
+
+## Design Mockups
+ ![Sign In](./frontend/public/Signin.png)
+ ![Books](./frontend/public/Library.png)
+ ![Account](./frontend/public/Account.png)
+
+## User Story
+
+* As a USER I want to login, if I cannot login;
+* As a USER I want to sign up
+* As a USER I want to sign out
+* As a USER I want to see what books are in the library
 
 
+## Future Development
 
-1. create schema
-2. creat a rseolbver
-3. Main file - will have to do both ends. (client file - calls the backend) apollo-client.js add as a dependency
+* As a USER I want to be able to ADD a book to the library
+* As a USER I want to see what previous books I have read
+* As an admin USER I want to print a custom QR code, so I can scan a book in and out of the library
+* As a USER I want a light and dark mode
+* As a USER I want to request a book
+* As an admin USER I want an admin panel
 
-4.
+## License
+The application is covered under the following license: MIT
 
-PLugin - Better comments
-// !!!! This is a bad idea because it exposes the password hash (Red)
-// ? Should we hash the password here? (blue)
-// ***** Additional operations ***** (Green)
-// todo: add a function to get a user by email (orange)
-// normal (grey)
+## Authors
+Stacey Rogers
 
+## GitHub Repository
+View GitHub Repository [here]
 
-
-
-In Backend
-There is a /users/create endpoint
-1. Create a user in the DB
-2. Create a JWT token
-3. Return the token and the new user
-
-There is also a /users/signin endpoint
-1. Validate the username & password
-2. If valid, Create a JWT token
-3. If valid, Return the token and the new user
-
-Say we have a POST /book/create route (eg, create a book) that is only available to logged in users
-1. The create payload should be the schema of a book (as normal) (eg, title, image, description, author)
-2. Also in that payload in the headers should be the authorisationToken: JWTsecret
-3. In the routes for /book/create before the controller, we call the checkIsAuthorised middleware
-4. This validates the authorisationToken: JWTsecret:
-    - A. Exists
-    - B. Is valid
-    - C. Is not expired
-    - D. Anything else ? (eg, userType is Admin) (if only admins were allowed to create books)
-    - E. Returns error if any of the above are not true
-    - F. If all good, proceed to controller.
-5. Continue as normal in the controller (eg, call service).
+## Deployed Application
+View deployed application [here](https://library-01-2.onrender.com/)
 
